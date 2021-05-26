@@ -10,14 +10,7 @@ public class Main {
     /** Aquí jugarem amb catalá */
     public static boolean catala = false;
 
-    /**
-     * The main method.
-     *
-     * @param args
-     *            the arguments
-     * @throws Exception
-     *             the exception
-     */
+
     public static void main(String[] args) throws Exception {
 	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	boolean opcio = true;
@@ -29,7 +22,7 @@ public class Main {
 	int dimensions2 = 0;
 	int numeroMinas = 0;
 
-	// Selector de idioma b�sico
+	// Selecionar el idioma básico
 	while (opcio3) {
 		System.out.println("Si us plau, selecciona un idioma / Por favor, selecciona el idioma");
 	    System.out.println("a) Catala");
@@ -44,13 +37,13 @@ public class Main {
 	    nombre = br.readLine();
 	    
 	    do {
-		// Men� castellano
-		if (idioma.equals("b") | idioma.equals("Espa�ol") | idioma.equals("Castella") | idioma.equals("Castellano")) {
+		// Menú castellano
+		if (idioma.equals("b") | idioma.equals("B") | idioma.equals("Español") | idioma.equals("Castella") | idioma.equals("Castellano")) {
 		    castellano = true;
 		    while (opcio) {
 			opcio2 = true;
-			System.out.println("Escoge una opci�n (a, b, c, d, e)");
-			System.out.println("a) Empezar partida");
+			System.out.println("Escoge una opción (a, b, c, d, e)");
+			System.out.println("a) Empezar una partida");
 			System.out.println("b) Ver puntuaciones");
 			System.out.println("c) Cambiar usuario");
 			System.out.println("d) Salir.");
@@ -73,7 +66,7 @@ public class Main {
 					// Inicio del tiempo de juego para el
 					// record
 					long inicioJuego = System.nanoTime();
-					// Creaci�n del tablero de juego
+					// Creación del tablero de juego
 					TableroJuego juego = new TableroJuego(
 						dimensions, dimensions2,
 						numeroMinas);
@@ -130,7 +123,7 @@ public class Main {
 						.readLine()));
 					if (dimensions > 100) {
 					    System.err
-						    .println("Error. M�ximo 100, por favor\n");
+						    .println("Error. Máximo 100, por favor\n");
 					    break;
 					}
 					System.out
@@ -139,17 +132,17 @@ public class Main {
 						.readLine()));
 					if (dimensions2 > 100) {
 					    System.err
-						    .println("Error. M�ximo 100, por favor\n");
+						    .println("Error. Máximo 100, por favor\n");
 					    break;
 					}
 					System.out
-						.println("Introduzca el n�mero de minas");
+						.println("Introduzca el número de minas");
 					numeroMinas = (Integer.parseInt(br
 						.readLine()));
 					if (numeroMinas >= dimensions
 						* dimensions2) {
 					    System.err
-						    .println("Error. Todas las casillas ser�n minas, la victoria es imposible\n");
+						    .println("Error. Todas las casillas serán minas, la victoria es imposible\n");
 					    break;
 					}
 					long inicioJuego = System.nanoTime();
@@ -210,15 +203,15 @@ public class Main {
 		    }
 		}
 		// Menú catala
-		if (idioma.equals("a") | idioma.equals("Catala")) {
+		if (idioma.equals("a") | idioma.equals("Catala") | idioma.equals("A")) {
 		    catala = true;
 		    while (opcio) {
 			opcio2 = true;
-			System.out.println("Choose an option (a, b, c, d, e)");
-			System.out.println("a) Start game");
-			System.out.println("b) See records");
-			System.out.println("c) Change username");
-			System.out.println("d) Exit.");
+			System.out.println("Trieu una opció (a, b, c, d, e)");
+			System.out.println("a) Començar el joc");
+			System.out.println("b) Veure puntuacions");
+			System.out.println("c) Canviar usuari");
+			System.out.println("d) Sortir.");
 
 			String linea = br.readLine();
 
@@ -226,7 +219,7 @@ public class Main {
 			    // Tableros por defecto o personalizado
 			    if (linea.equals("a")) {
 				System.out
-					.println("Enter the dimensions of the board and the number of mines\na) Beginner: 10 mines y 9x9\nb) Intermediate: 40 mines y 16x16\nc) Advanced: 99 mines y 16x30\nd) Custom: enter your own values\ne) Return to main menu");
+					.println("Introduïu les dimensions de l'tauler i la quantitat de mines \n a) Principiant: 10 mines i 9x9 \n b) Intermedi: 40 mines i 16x16 \n c) Avançat: 99 mines i 16x30 \n d) Personalitzat: introdueix els teus propis valors \n e) Tornar al menú principal ");
 				String lineaPartida = br.readLine();
 				do {
 				    if (lineaPartida.equals("a")) {
