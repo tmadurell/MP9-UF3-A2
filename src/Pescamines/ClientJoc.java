@@ -2,7 +2,7 @@ package Pescamines;
 
 import java.io.*;
 
-public class Main {
+public class ClientJoc {
 
     /** Aquí jugarem amb castella */
     public static boolean castellano = false;
@@ -33,7 +33,7 @@ public class Main {
 	    String nombre;
 
 	    // Solicitud del nombre de usuario para el record
-	    System.out.println("Por favor, introduce tu nombre");
+		System.out.println("Si us plau introdueix un nom / Por favor, introduce tu nombre");
 	    nombre = br.readLine();
 	    
 	    do {
@@ -54,7 +54,7 @@ public class Main {
 			    // Tableros por defecto o personalizado
 			    if (linea.equals("a")) {
 				System.out
-					.println("Introduzca las dimensiones del tablero y la cantidad de minas\na) Principiante: 10 minas y 9x9\nb) Intermedio: 40 minas y 16x16\nc) Avanzado: 99 minas y 16x30\nd) Personalizado: introduce tus propios valores\ne) Volver al men� principal");
+						.println("Introduzca las dimensiones del tablero y la cantidad de minas\na) Fácil: 10 minas y 9x9\nb) Intermedio: 40 minas y 16x16\nc) Difícil: 99 minas y 16x30\nd) Personalizado: introduce tus propios valores\ne) Volver al menú principal");
 				String lineaPartida = br.readLine();
 				do {
 				    if (lineaPartida.equals("a")) {
@@ -73,7 +73,7 @@ public class Main {
 					// Fin del tiempo de partida
 					long tiempoJuego = System.nanoTime()
 						- inicioJuego;
-					// Si la partida termin� en victoria, se
+					// Si la partida terminá en victoria, se
 					// escribe el record
 					if (TableroJuego.record) {
 					    gestorGuardado.gestionarGuardado(
@@ -158,7 +158,7 @@ public class Main {
 					}
 				    }
 				    if (lineaPartida.equals("e")) {
-					// Volver al men� principal
+					// Volver al menú principal
 					partidaMenu = false;
 					opcio2 = false;
 				    }
@@ -186,11 +186,11 @@ public class Main {
 				opcio2 = false;
 			    }
 
-			    // Error en la selecci�n, pausa y regreso al men�
+			    // Error en la selección, pausa y regreso al menú
 			    if (!(linea.equals("a") || linea.equals("b")
 				    || linea.equals("c") || linea.equals("d"))) {
 				System.err
-					.println("Error. Por favor, introduce a, b, c � d");
+					.println("Error. Por favor, introduce a, b, c ó d");
 				try {
 				    Thread.sleep(2000);
 				} catch (InterruptedException ex) {
@@ -219,7 +219,7 @@ public class Main {
 			    // Tableros por defecto o personalizado
 			    if (linea.equals("a")) {
 				System.out
-					.println("Introduïu les dimensions de l'tauler i la quantitat de mines \n a) Principiant: 10 mines i 9x9 \n b) Intermedi: 40 mines i 16x16 \n c) Avançat: 99 mines i 16x30 \n d) Personalitzat: introdueix els teus propis valors \n e) Tornar al menú principal ");
+						.println("Introduïu les dimensions de l'tauler i la quantitat de mines \n a) Principiant: 10 mines i 9x9 \n b) Intermedi: 40 mines i 16x16 \n c) Dificil: 99 mines i 16x30 \n d) Personalitzat: introdueix els teus propis valors \n e) Tornar al menú principal ");
 				String lineaPartida = br.readLine();
 				do {
 				    if (lineaPartida.equals("a")) {
@@ -231,7 +231,7 @@ public class Main {
 					// Inicio del tiempo de juego para el
 					// record
 					long inicioJuego = System.nanoTime();
-					// Creaci�n del tablero de juego
+					// Creación del tablero de juego
 					TableroJuego juego = new TableroJuego(
 						dimensions, dimensions2,
 						numeroMinas);
@@ -282,33 +282,33 @@ public class Main {
 				    if (lineaPartida.equals("d")) {
 					// Personalizado, se solicitan los datos
 					// al usuario
-					System.out
-						.println("Enter side 1 size (Until 100)");
+						System.out
+								.println("Introduïu les dimensions de l'costat 1 (Fins a 100)");
 					dimensions = (Integer.parseInt(br
 						.readLine()));
 					if (dimensions > 100) {
-					    System.err
-						    .println("Error. Maximum 100, please\n");
+						System.err
+								.println("Error. Maxim 100, si us plau\n");
 					    break;
 					}
-					System.out
-						.println("Enter side 2 size (Until 100)");
+						System.out
+								.println("Introduïu les dimensions de l'costat 2 (Fins a 100)");
 					dimensions2 = (Integer.parseInt(br
 						.readLine()));
 					if (dimensions2 > 100) {
-					    System.err
-						    .println("Error. Maximum 100, please\n");
+						System.err
+								.println("Error. Maxim 100, si us plau\n");
 					    break;
 					}
-					System.out
-						.println("Enter the number of mines");
+						System.out
+								.println("Introdueix el número de mines");
 					numeroMinas = (Integer.parseInt(br
 						.readLine()));
 					if (numeroMinas >= dimensions
 						* dimensions2) {
-					    System.err
-						    .println("Error. All boxes will be mines, victory is impossible\n");
-					    break;
+						System.err
+								.println("Error. Totes les caselles seran mines, la victòria és impossible\n");
+						break;
 					}
 					long inicioJuego = System.nanoTime();
 					TableroJuego juego = new TableroJuego(
@@ -323,7 +323,7 @@ public class Main {
 					}
 				    }
 				    if (lineaPartida.equals("e")) {
-					// Volver al men� principal
+					// Volver al menú principal
 					partidaMenu = false;
 					opcio2 = false;
 				    }
@@ -338,7 +338,7 @@ public class Main {
 			    }
 			    if (linea.equals("c")) {
 				// Cambio del nombre de usuario
-				System.out.println("Enter the username");
+					System.out.println("Escriu al nom de usuari");
 				nombre = br.readLine();
 				opcio2 = false;
 			    }
@@ -354,7 +354,7 @@ public class Main {
 			    if (!(linea.equals("a") || linea.equals("b")
 				    || linea.equals("c") || linea.equals("d"))) {
 				System.err
-					.println("Error. Please, input a, b, c � d");
+						.println("Error. Si us plau, introdueix a, b, c ó d");
 				try {
 				    Thread.sleep(2000);
 				} catch (InterruptedException ex) {
@@ -366,12 +366,12 @@ public class Main {
 
 		    }
 		}
-		// Error en la selecci�n, pausa y regreso al men�
+		// Error en la selección, pausa y regreso al menú
 		if (!(idioma.equals("a") || idioma.equals("b")
-			|| idioma.equals("Espa�ol") || idioma.equals("English"))) {
+			|| idioma.equals("Español") || idioma.equals("English"))) {
 		    System.err
 			    .println("Error. Por favor, selecciona el idioma");
-		    System.err.println("Please, select your language");
+			System.err.println("Si us plau, seleccioneu un idioma");
 		    try {
 			Thread.sleep(2000);
 		    } catch (InterruptedException ex) {

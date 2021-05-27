@@ -9,7 +9,7 @@ import java.util.*;
 public class EscribirRecord {
 
     /** The path. */
-    // Obtenci�n del directorio del usuario, as�, siempre hay permisos de
+    // Obtención del directorio del usuario, as�, siempre hay permisos de
     // escritura
     static String path = System.getProperty("user.home").replace("\\", "\\\\")
 	    + "\\";
@@ -43,12 +43,12 @@ public class EscribirRecord {
 		stringBuffer.append("\n");
 	    }
 	    fileReader.close();
-	    if (Main.castellano) {
+	    if (ClientJoc.castellano) {
 		System.out
 			.println("\n\nOrdenado por tiempo\n\nLos records son:\n\n");
 	    }
-	    if (Main.catala) {
-		System.out.println("\n\nSort by time\n\nThe records are:\n\n");
+	    if (ClientJoc.catala) {
+		System.out.println("\n\nOrdenat per temps\n\nEls records son:\n\n");
 	    }
 	    System.out.println(stringBuffer.toString());
 	} catch (IOException e) {

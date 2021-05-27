@@ -7,14 +7,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/**
- * The Class TableroJuego.
- */
+
 public class TableroJuego {
 
-    /**
-     * The Class Tablero.
-     */
+
     private static class Tablero {
 
 	/** The oculto. */
@@ -76,8 +72,8 @@ public class TableroJuego {
      *             Signals that an I/O exception has occurred.
      */
 
-    // Se crea el tablero de juego y se solicita la introducci�n de coordenadas
-    // mediante el m�todo. No para hasta que victoria sea true
+    // Se crea el tablero de juego y se solicita la introducción de coordenadas
+    // mediante el método. No para hasta que victoria sea true
     public TableroJuego(int dimension, int dimension2, int numeroMinas)
 	    throws NumberFormatException, IOException {
 	this.dimension = dimension;
@@ -129,12 +125,12 @@ public class TableroJuego {
     public void solicitarCoordenadas() throws NumberFormatException,
 	    IOException {
 	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-	if (Main.castellano) {
-	    System.out.println("Introduzca la coordenada Y (1-" + dimension
-		    + ")");
-	    int coordenadaY = (Integer.parseInt(br.readLine()));
-	    System.out.println("Introduzca la coordenada X (1-" + dimension2
-		    + ")");
+	if (ClientJoc.castellano) {
+		System.out.println("Introduzca una coordenada vertical Y (1-" + dimension
+				+ ")");
+		int coordenadaY = (Integer.parseInt(br.readLine()));
+		System.out.println("Introduzca una coordenada horizontal X (1-" + dimension2
+				+ ")");
 	    int coordenadaX = (Integer.parseInt(br.readLine()));
 	    c = board[coordenadaY][coordenadaX];
 	    movimientos++;
@@ -144,10 +140,10 @@ public class TableroJuego {
 	    comprobarVictoria();
 	    calcularColindantes();
 	}
-	if (Main.catala) {
-	    System.out.println("Enter the Y coordinate (1-" + dimension + ")");
+	if (ClientJoc.catala) {
+		System.out.println("Introduïu una coordenada vertical Y (1-" + dimension + ")");
 	    int coordenadaY = (Integer.parseInt(br.readLine()));
-	    System.out.println("Enter the X coordinate (1-" + dimension2 + ")");
+		System.out.println("Introduïu una coordenada horitzontal X (1-" + dimension2 + ")");
 	    int coordenadaX = (Integer.parseInt(br.readLine()));
 	    c = board[coordenadaY][coordenadaX];
 	    movimientos++;
@@ -159,17 +155,9 @@ public class TableroJuego {
 	}
     }
 
-    /**
-     * Descubrir.
-     *
-     * @param x
-     *            the x
-     * @param y
-     *            the y
-     * @return true, if successful
-     */
 
-    // M�todo para descubrir las casillas colindantes cuando sale un 0.
+
+    // Método para descubrir las casillas colindantes cuando sale un 0.
     // Recursivo.
     public boolean descubrir(int x, int y) {
 	if (!dentroTablero(x, y)) {
@@ -209,7 +197,7 @@ public class TableroJuego {
      *            the y
      * @return true, if successful
      */
-    // M�todo para comprobar si la casilla est� dentro del tablero.
+    // Método para comprobar si la casilla est� dentro del tablero.
     public boolean dentroTablero(int x, int y) {
 	if (x > 0 && y > 0 && x <= dimension && y <= dimension2) {
 	    return true;
@@ -224,8 +212,8 @@ public class TableroJuego {
      */
     public void comprobarDerrota() {
 	if (c.mina) {
-	    if (Main.castellano) {
-		System.out.println("\n\nAqu� estaban las minas\n\n");
+	    if (ClientJoc.castellano) {
+		System.out.println("\n\nAquí estaban las minas\n\n");
 		for (int i = 1; i <= dimension; i++) {
 		    System.out.printf("%2d| ", i);
 		    for (int j = 1; j <= dimension2; j++) {
@@ -253,8 +241,8 @@ public class TableroJuego {
 		movimientos = 0;
 		victoria = true;
 	    }
-	    if (Main.catala) {
-		System.out.println("\n\nHere was the mines\n\n");
+	    if (ClientJoc.catala) {
+		System.out.println("\n\nAquí hi havien mines\n\n");
 		for (int i = 1; i <= dimension; i++) {
 		    System.out.printf("%2d| ", i);
 		    for (int j = 1; j <= dimension2; j++) {
@@ -278,7 +266,7 @@ public class TableroJuego {
 		}
 		System.out.println();
 
-		System.out.println("\n\nYou loose. Try again\n\n");
+		System.out.println("\n\nPerds. Torna-ho a provar\n\n");
 		movimientos = 0;
 		victoria = true;
 
@@ -288,7 +276,7 @@ public class TableroJuego {
     }
 
     /**
-     * Comprobar victoria y mostrar el n�mero de movimientos.
+     * Comprobar victoria y mostrar el número de movimientos.
      */
     public void comprobarVictoria() {
 	int aux = 0;
@@ -302,7 +290,7 @@ public class TableroJuego {
 	    }
 	}
 
-	if (Main.castellano) {
+	if (ClientJoc.castellano) {
 
 	    if (aux == (dimension * dimension2) - numeroMinas2) {
 		System.out.println("\n\nHas ganado en " + movimientos
@@ -311,10 +299,10 @@ public class TableroJuego {
 		record = true;
 	    }
 	}
-	if (Main.catala) {
+	if (ClientJoc.catala) {
 	    if (aux == (dimension * dimension2) - numeroMinas2) {
-		System.out.println("\n\nYou win in " + movimientos
-			+ " movements. Congrats\n\n");
+		System.out.println("\n\nHas guanyat en " + movimientos
+			+ " moviments. Enhorabona\n\n");
 		victoria = true;
 		record = true;
 	    }
@@ -366,11 +354,7 @@ public class TableroJuego {
 	System.out.println();
     }
 
-    /**
-     * Gets the movimientos.
-     *
-     * @return the movimientos
-     */
+
     public int getMovimientos() {
 	return movimientos;
     }
