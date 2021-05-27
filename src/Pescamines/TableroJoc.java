@@ -8,7 +8,7 @@ import java.util.Collections;
 import java.util.List;
 
 
-public class TableroJuego {
+public class TableroJoc {
 
 
     private static class Tablero {
@@ -74,7 +74,7 @@ public class TableroJuego {
 
     // Se crea el tablero de juego y se solicita la introducción de coordenadas
     // mediante el método. No para hasta que victoria sea true
-    public TableroJuego(int dimension, int dimension2, int numeroMinas)
+    public TableroJoc(int dimension, int dimension2, int numeroMinas)
 	    throws NumberFormatException, IOException {
 	this.dimension = dimension;
 	this.dimension2 = dimension2;

@@ -67,7 +67,7 @@ public class ClientJoc {
 					// record
 					long inicioJuego = System.nanoTime();
 					// Creación del tablero de juego
-					TableroJuego juego = new TableroJuego(
+					TableroJoc juego = new TableroJoc(
 						dimensions, dimensions2,
 						numeroMinas);
 					// Fin del tiempo de partida
@@ -75,7 +75,7 @@ public class ClientJoc {
 						- inicioJuego;
 					// Si la partida terminá en victoria, se
 					// escribe el record
-					if (TableroJuego.record) {
+					if (TableroJoc.record) {
 					    gestorGuardado.gestionarGuardado(
 						    tiempoJuego, fileName,
 						    nombre);
@@ -86,12 +86,12 @@ public class ClientJoc {
 					dimensions2 = 16;
 					numeroMinas = 40;
 					long inicioJuego = System.nanoTime();
-					TableroJuego juego = new TableroJuego(
+					TableroJoc juego = new TableroJoc(
 						dimensions, dimensions2,
 						numeroMinas);
 					long tiempoJuego = System.nanoTime()
 						- inicioJuego;
-					if (TableroJuego.record) {
+					if (TableroJoc.record) {
 					    gestorGuardado.gestionarGuardado(
 						    tiempoJuego, fileName,
 						    nombre);
@@ -103,12 +103,12 @@ public class ClientJoc {
 					dimensions2 = 30;
 					numeroMinas = 99;
 					long inicioJuego = System.nanoTime();
-					TableroJuego juego = new TableroJuego(
+					TableroJoc juego = new TableroJoc(
 						dimensions, dimensions2,
 						numeroMinas);
 					long tiempoJuego = System.nanoTime()
 						- inicioJuego;
-					if (TableroJuego.record) {
+					if (TableroJoc.record) {
 					    gestorGuardado.gestionarGuardado(
 						    tiempoJuego, fileName,
 						    nombre);
@@ -146,12 +146,12 @@ public class ClientJoc {
 					    break;
 					}
 					long inicioJuego = System.nanoTime();
-					TableroJuego juego = new TableroJuego(
+					TableroJoc juego = new TableroJoc(
 						dimensions, dimensions2,
 						numeroMinas);
 					long tiempoJuego = System.nanoTime()
 						- inicioJuego;
-					if (TableroJuego.record) {
+					if (TableroJoc.record) {
 					    gestorGuardado.gestionarGuardado(
 						    tiempoJuego, fileName,
 						    nombre);
@@ -232,7 +232,7 @@ public class ClientJoc {
 					// record
 					long inicioJuego = System.nanoTime();
 					// Creación del tablero de juego
-					TableroJuego juego = new TableroJuego(
+					TableroJoc juego = new TableroJoc(
 						dimensions, dimensions2,
 						numeroMinas);
 					// Fin del tiempo de partida
@@ -240,7 +240,7 @@ public class ClientJoc {
 						- inicioJuego;
 					// Si la partida termin� en victoria, se
 					// escribe el record
-					if (TableroJuego.record) {
+					if (TableroJoc.record) {
 					    gestorGuardado.gestionarGuardado(
 						    tiempoJuego, fileName,
 						    nombre);
@@ -251,12 +251,12 @@ public class ClientJoc {
 					dimensions2 = 16;
 					numeroMinas = 40;
 					long inicioJuego = System.nanoTime();
-					TableroJuego juego = new TableroJuego(
+					TableroJoc juego = new TableroJoc(
 						dimensions, dimensions2,
 						numeroMinas);
 					long tiempoJuego = System.nanoTime()
 						- inicioJuego;
-					if (TableroJuego.record) {
+					if (TableroJoc.record) {
 					    gestorGuardado.gestionarGuardado(
 						    tiempoJuego, fileName,
 						    nombre);
@@ -268,12 +268,12 @@ public class ClientJoc {
 					dimensions2 = 30;
 					numeroMinas = 99;
 					long inicioJuego = System.nanoTime();
-					TableroJuego juego = new TableroJuego(
+					TableroJoc juego = new TableroJoc(
 						dimensions, dimensions2,
 						numeroMinas);
 					long tiempoJuego = System.nanoTime()
 						- inicioJuego;
-					if (TableroJuego.record) {
+					if (TableroJoc.record) {
 					    gestorGuardado.gestionarGuardado(
 						    tiempoJuego, fileName,
 						    nombre);
@@ -311,12 +311,12 @@ public class ClientJoc {
 						break;
 					}
 					long inicioJuego = System.nanoTime();
-					TableroJuego juego = new TableroJuego(
+					TableroJoc juego = new TableroJoc(
 						dimensions, dimensions2,
 						numeroMinas);
 					long tiempoJuego = System.nanoTime()
 						- inicioJuego;
-					if (TableroJuego.record) {
+					if (TableroJoc.record) {
 					    gestorGuardado.gestionarGuardado(
 						    tiempoJuego, fileName,
 						    nombre);
