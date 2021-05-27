@@ -98,7 +98,7 @@ public class EscribirRecord {
     public void gestionarGuardado(long tiempo, String nombreFichero,
 	    String nombre) throws IOException {
 	double segundos = tiempo / 1000000000.0;
-	saveWins(nombreFichero, nombre, TableroJuego.movimientos, segundos);
+	saveWins(nombreFichero, nombre, TableroJoc.movimientos, segundos);
 	Ordenar();
     }
 
